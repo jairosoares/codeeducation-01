@@ -1,0 +1,13 @@
+# docker build -t code-education-image .
+# docker run --name=go-code-education code-education-image
+# docker rm -f go-code-education            #MATANDO CONTAINER
+# GEROU UMA IMAGEM DE 240.6 MB !!!!!!!!!
+FROM golang:1.7-alpine
+
+LABEL maintainer="Jairo Soaes <jairo.soares@gmail.com>"
+
+WORKDIR /app
+
+COPY . .
+
+CMD [ "go", "run", "main.go" ]
